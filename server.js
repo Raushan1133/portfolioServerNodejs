@@ -7,8 +7,7 @@ import cors from 'cors'
 app.use(cors())
 dotenv.config();
 app.use(express.json());
-const MONGODB_URL = process.env.MONGODB_URL
-connectDB(MONGODB_URL);
+connectDB();
 
 app.get('/',(req,res)=>{
     res.send("Hello world");

@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
 
-const connectDB = async (DATABASE_URL) =>{
+const connectDB = async () =>{
+    const MONGODB_URL = process.env.MONGODB_URL
     try{
         const DB_OPTIONS = {
             dbName :"Portfolio"
         }
-        await mongoose.connect(DATABASE_URL,DB_OPTIONS)
+        await mongoose.connect(MONGODB_URL,DB_OPTIONS)
         console.log('Connected Successfully...');
     } 
     catch(error){
